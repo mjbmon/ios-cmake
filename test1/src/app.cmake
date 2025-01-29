@@ -1,7 +1,13 @@
-set(APP_PROJECT_NAME "mps-test2")
-set(APP_NAME "mpsTest2")
+set(APP test1)
+set(APP_NAME "Test1")
+set(COM_NAME com.roachMotel)
+set(APP_BUNDLE_NAME ${COM_NAME}.${APP_NAME})
+
+message("APP_BUNDLE_NAME ${APP_BUNDLE_NAME}")
+
+set(APP_PROJECT_NAME ${APP})  # IDK
 set(APP_EXECUTABLE_NAME ${APP_NAME})
-set(APP_BUNDLE_IDENTIFIER "com.yrissari.${APP_NAME}")
+set(APP_BUNDLE_IDENTIFIER ${APP_BUNDLE_NAME})
 set(APP_DEPLOYMENT_TARGET 17.0)
 set(APP_DEVICE_FAMILY "1,2")  # iphone 1 , ipad 2
 

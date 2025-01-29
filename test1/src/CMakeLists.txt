@@ -1,20 +1,22 @@
 cmake_minimum_required(VERSION 3.20)
 
+set(IS_SIMULATOR True)
+include (app.cmake)     # define APP_NAME, ...
+
+message("APP BUNDLE ${APP_BUNDLE_IDENTIFIER}")
+
 set(HOME $ENV{HOME})
 
-set(PROJECT test2)
+set(PROJECT ${APP})
 
 project(${PROJECT}
         VERSION "1.0.1"
         LANGUAGES C CXX OBJC OBJCXX)
 
-include ("${CMAKE_CURRENT_SOURCE_DIR}/test2/CMakeLists.txt")
-set(PROJECT_SOURCES ${test2_sources})
+include (ios.cmake)
 
-set(IS_SIMULATOR True)
-include (app.cmake)     # define APP_NAME, ...
-include (${HOME}/apple/devel.cmake)
-include (${HOME}/apple/ios.cmake)
+include ("${CMAKE_CURRENT_SOURCE_DIR}/${APP}/CMakeLists.txt")
+set(PROJECT_SOURCES ${app_sources})
 
 message("App name ${APP_NAME}")
 message("Project sources ${PROJECT_SOURCES}")

@@ -67,18 +67,8 @@ CGRectSetPos(CGRect frame, CGFloat x, CGFloat y)
 - (void) test_resource
 {
    NSLog(@"test resource");
-
-/*
-    char resource_path[512];
-    
-    const char* utf8String = [[[NSBundle mainBundle] resourcePath] UTF8String];
-    snprintf(resource_path, 512, "%s/test2.txt", utf8String);
-    
-   NSLog(@"%@",[[NSBundle mainBundle] resourcePath]);
-*/
-
-  ctest_resource();
-  ctest_create_test_document();
+   ctest_resource();
+   ctest_create_test_document();
 }
 
 
@@ -113,7 +103,7 @@ CGRectSetPos(CGRect frame, CGFloat x, CGFloat y)
 
     CGRect labelFrame  = CGRectMake(100,100, 200, 30);
     example_label = [[UILabel alloc] initWithFrame:labelFrame];
-    [example_label setText:@"Hello, world"];
+    [example_label setText:@"Hello, world (Test1)"];
     [example_label setBackgroundColor:[UIColor blackColor]];
     [example_label setTextColor:[UIColor whiteColor]];
     [example_label setFont:[UIFont systemFontOfSize:30]];
@@ -127,15 +117,6 @@ CGRectSetPos(CGRect frame, CGFloat x, CGFloat y)
     CGRect buttonFrame  = CGRectMake(100,100, 200, 100);
 
     example_button = [[UIButton alloc] initWithFrame:buttonFrame];
-/*
-    [example_button setText:@"Push me!"];
-    [example_button setBackgroundColor:[UIColor blackColor]];
-    [example_button setTextColor:[UIColor whiteColor]];
-    [example_button setFont:[UIFont systemFontOfSize:30]];
-    [example_button setHidden:false];
-*/
-
-    example_button = [[UIButton alloc]initWithFrame:buttonFrame];
     [example_button setTitle:@"Press Me" forState:UIControlStateNormal];
     [example_button addTarget:self action:@selector(buttonEvent:)
          forControlEvents:UIControlEventTouchUpInside];

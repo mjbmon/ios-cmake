@@ -1,7 +1,9 @@
 #DEBUG=-DCMAKE_FIND_DEBUG_MODE=ON
 
-APP=test2
-APP_NAME=mpsTest2
+APP=test1
+APP_NAME=Test1
+COM_NAME=com.roachMotel
+APP_BUNDLE_NAME=${COM_NAME}.${APP_NAME}
 
 SIMDIR=/Applications/Xcode.app/Contents/Developer/Applications
 
@@ -44,7 +46,9 @@ build-sim:
 sim-list:
 	xcrun simctl list
 
-start-sim:
+start-sim: launch-sim
+
+launch-sim:
 	${SIMDIR}/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID ${DEVICE_ID} >& sim.log &
 
 install-sim:
@@ -52,10 +56,10 @@ install-sim:
 
 # This is extremely verbose
 run-sim:
-	xcrun simctl spawn booted log stream --level debug --predicate 'subsystem == "com.yrissari.mpsTest2"'
+	xcrun simctl spawn booted log stream --level debug --predicate 'subsystem == "${APP_BUNDLE_NAME}"'
 
 list-appdir:
-	xcrun simctl get_app_container booted com.yrissari.mpsTest2 data
+	xcrun simctl get_app_container booted com.yrissari.${APP_NAME} data
 
 screenshot:
 	xcrun simctl io booted screenshot --type=png ./sim.png
