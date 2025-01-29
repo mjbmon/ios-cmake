@@ -1,7 +1,7 @@
 A Very Simple IOS App.
 ======================
 
-This IOS app has a button and a label. The button
+This project builds an IOS app that has a button and a label. The button
 action hides/shows the label. 
 
 [Workflow](WORKFLOW.md)
