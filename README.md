@@ -7,6 +7,9 @@ to compile, build, and install the app completely from
 the command line, without launching the XCode GUI. See
 Workflow.md in each project for instructions.
 
+These projects use Objective-C/C++ and C++. The apps are
+built without storyboards, except for the launch screens.
+
 * [Test1](test1/README.md) -- This is a simple app that displays a button and
              a label.
 
