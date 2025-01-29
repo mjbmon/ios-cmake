@@ -7,8 +7,8 @@ to compile, build, and install the app completely from
 the command line, without launching the XCode GUI. See
 Workflow.md in each project for instructions.
 
-* [Test1]test1/README.md -- This is a simple app that displays a button and
+* [Test1](test1/README.md) -- This is a simple app that displays a button and
              a label.
 
-* [TestEdit]tedit/README.md -- A simple text editor.
+* [TestEdit](tedit/README.md) -- A simple text editor.
 
