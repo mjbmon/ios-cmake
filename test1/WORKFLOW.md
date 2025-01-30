@@ -5,6 +5,8 @@ This project uses a [Makefile](Makefile) to organize the building
 and testing process. The Makefile is very simple: it is just a place
 to hold all of the necessary commands.
 
+  * The first step is configuring the project. See [Configure](CONFIGURE.md).
+
   * The overall workflow is
 
 ```console

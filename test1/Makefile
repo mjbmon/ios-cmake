@@ -2,6 +2,7 @@ include make.conf
 
 clean:
 	rm -rf build sim.log
+	rm -rf ./make.conf src/app.cmake
 
 gen:
 	cmake ${DEBUG} \
@@ -24,7 +25,7 @@ build-sim:
 	(cd build/${APP}.xcodeproj; xcodebuild -workspace project.xcworkspace\
              -scheme ${APP_NAME} \
              -destination ${DEVICE} \
-             -configuration ${CONFIG} \
+             -configuration ${APP_CONFIG} \
         )
 
 sim-list:
@@ -36,7 +37,7 @@ launch-sim:
 	${SIMDIR}/Simulator.app/Contents/MacOS/Simulator -CurrentDeviceUDID ${DEVICE_ID} >& sim.log &
 
 install-sim:
-	xcrun simctl install booted build/${CONFIG}-iphonesimulator/${APP_NAME}.app
+	xcrun simctl install booted build/${APP_CONFIG}-iphonesimulator/${APP_NAME}.app
 
 # This is extremely verbose
 run-sim:
