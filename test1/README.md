@@ -5,15 +5,22 @@ This project builds an IOS app that has a button and a label. The button
 action hides/shows the label. The project is intended as a possible
 starting template for ObjectiveC/C++ and C++ apps on IOS. The project
 only uses a storyboard for the app launch screen (which should only
-display for a very brief time anyway). 
+display for a very brief time anyway). The project demonstrates how
+to build views, buttons, labels and so forth programmatically, how to
+connect actions (event handlers), how to access the application documents
+directory, resources, and data directory, and so forth.
 
 The main approach for this project is to strictly use the command-line
 to configure, build, and install the app.
 
-The project uses a standard configure/Make process to manage all
-of the steps. The configure and Makefile scripts are extremely
-straightforward. The Makefile is responsible for actually running
-CMake. CMake in turn knows how to build an XCode project 
+This is not an XCode project, per se. Instead
+the project uses a standard configure/Make process to manage all
+of the steps. The configure and Makefile scripts are written in
+an extremely straightforward manner. The Makefile is responsible for actually running
+CMake. CMake in turn knows how to generate an XCode project, which
+is placed inside a temporary build directory. The Makefile then
+knows how to use xcodebuild to compile and bundle the app, and
+install it on the simulator.
 
 For more details on building, etc. see
 
