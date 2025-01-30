@@ -16,7 +16,6 @@ built without storyboards, except for the launch screens.
 * [TestEdit](tedit/README.md) -- A simple text editor.
 
 
-
 ## See also.
 
 * [Examples](https://github.com/ttroy50/cmake-examples)

@@ -1,20 +1,4 @@
-#DEBUG=-DCMAKE_FIND_DEBUG_MODE=ON
-
-APP=test1
-APP_NAME=Test1
-COM_NAME=com.roachMotel
-APP_BUNDLE_NAME=${COM_NAME}.${APP_NAME}
-
-SIMDIR=/Applications/Xcode.app/Contents/Developer/Applications
-
-DEVICE_NAME=iPad Air 13-inch (M2)
-DEVICE_OS=17.5
-#DEVICE="platform=iOS Simulator,name=${DEVICE_NAME},OS=${DEVICE_OS}"
-
-DEVICE_ID=C669C32F-55A3-420B-88CB-B025675D1E0D
-DEVICE="platform=iOS Simulator,id=${DEVICE_ID}"
-
-CONFIG=Debug
+include make.conf
 
 clean:
 	rm -rf build sim.log
