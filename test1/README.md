@@ -31,6 +31,9 @@ For more details on building, etc. see
 Currently this app is limited to running on the simulator. Installing on
 an actual IOS device requires an Apple developer account etc.
 
+This is a screenshot of the app running on the simulator:
+![Screenshot](doc/screenshot1.png)
+
 ## Prerequisites:
 
   * Familiarity with shell scripting.
