@@ -31,7 +31,7 @@ For more details on building, etc. see
 Currently this app is limited to running on the simulator. Installing on
 an actual IOS device requires an Apple developer account etc.
 
-##Prerequisites:
+## Prerequisites:
 
   * Familiarity with shell scripting.
   * Limited familiarity with Make scripts.
@@ -41,7 +41,7 @@ an actual IOS device requires an Apple developer account etc.
   * Git
   * (recommended) Python
 
-##TO DO:
+## TO DO:
 
   * Document the configure process in more detail.
 
