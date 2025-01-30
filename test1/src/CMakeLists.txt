@@ -15,7 +15,7 @@ project(${PROJECT}
 
 include (ios.cmake)
 
-include ("${CMAKE_CURRENT_SOURCE_DIR}/${APP}/CMakeLists.txt")
+include ("${CMAKE_CURRENT_SOURCE_DIR}/app/CMakeLists.txt")
 set(PROJECT_SOURCES ${app_sources})
 
 message("App name ${APP_NAME}")

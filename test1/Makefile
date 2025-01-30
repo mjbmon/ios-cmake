@@ -2,7 +2,6 @@ include make.conf
 
 clean:
 	rm -rf build sim.log
-	rm -rf ./make.conf src/app.cmake
 
 gen:
 	cmake ${DEBUG} \
