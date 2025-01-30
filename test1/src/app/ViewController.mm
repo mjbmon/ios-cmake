@@ -1,19 +1,3 @@
-
-/*
-  If I have a property x then I need
-    a declaration
-    zero or one getters.
-    zero or more setters.
-
-  property type x;
-  get x {code}
-  set x(type v) {code}
-
-  type x;
-  get property x {}          // there is one getter
-  set property x(type v) {}  // there can be many setters.
-*/
-
 #import "ViewController.h"
 
 #include "cns.h"
@@ -101,13 +85,14 @@ CGRectSetPos(CGRect frame, CGFloat x, CGFloat y)
 // Multiline text?
 // Text with markup?
 
-    CGRect labelFrame  = CGRectMake(100,100, 200, 30);
+    CGRect labelFrame  = CGRectMake(100, 100, 300, 30);
     example_label = [[UILabel alloc] initWithFrame:labelFrame];
-    [example_label setText:@"Hello, world (Test1)"];
+    [example_label setText:@"Hello, World (Test1)"];
     [example_label setBackgroundColor:[UIColor blackColor]];
     [example_label setTextColor:[UIColor whiteColor]];
     [example_label setFont:[UIFont systemFontOfSize:30]];
     [example_label setHidden:false];
+
 // modify the position
     example_label.frame = CGRectSetPos(example_label.frame,50, 300);
 

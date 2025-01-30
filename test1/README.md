@@ -57,6 +57,10 @@ an actual IOS device requires an Apple developer account etc.
     up on the screen. Clicking on the icon in the taskbar
     may launch it. 
 
+  * Get the log file from the simulator.
+
+  * App versioning.
+
   * Add a screenshot.
 
   * Work on configuring/building/installing app to real devices.

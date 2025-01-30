@@ -1,7 +1,7 @@
 # This file assumes that app.cmake has already been
 # included so the following cmake variables have been
 # set:
-#      IS_SIMULATOR
+#      DEVICE_IS_SIMULATOR
 #      APP_NAME
 #      APP_BUNDLE_IDENTIFIER
 #      APP_ICON_FILE
@@ -11,7 +11,6 @@
 #
 
 set (IOS True)
-#set(IS_SIMULATOR True)  # now set by CMakeLists.txt
 
 #set(IPHONE_SIM "iPhoneSimulator18.2.sdk")
 #set(IPHONE_OS "iPhoneOS18.2.sdk")
@@ -20,7 +19,7 @@ set (IOS True)
 set(IPHONE_SIM "iPhoneSimulator.sdk")
 set(IPHONE_OS "iPhoneOS.sdk")
 
-message("IS_SIMULATOR ${IS_SIMULATOR}")
+message("DEVICE_IS_SIMULATOR ${DEVICE_IS_SIMULATOR}")
 
 enable_language(CXX)
 enable_language(OBJC)
@@ -40,10 +39,10 @@ set(MACOSX_BUNDLE_COPYRIGHT "Copyright YOU")
 set(MACOSX_DEPLOYMENT_TARGET ${APP_DEPLOYMENT_TARGET})
 
 set(IOS_PLATFORMS_TOP /Applications/Xcode.app/Contents/Developer/Platforms)
-if (${IS_SIMULATOR} )
+if (${DEVICE_IS_SIMULATOR} )
   set (IOS_PLATFORM_LOCATION "${IOS_PLATFORMS_TOP}/iPhoneSimulator.platform")
   set (IOS_PLATFORM_SDK ${IPHONE_SIM})
-else (${IS_SIMULATOR})
+else (${DEVICE_IS_SIMULATOR})
   set (IOS_PLATFORM_LOCATION "${IOS_PLATFORMS_TOP}/iPhoneOS.platform")
   set (IOS_PLATFORM_SDK ${IPHONE_OS} ) 
 endif()
@@ -68,14 +67,14 @@ set (CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set (CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 
 # How to change this for device?
-if (${IS_SIMULATOR} )
+if (${DEVICE_IS_SIMULATOR} )
   set (IOS_PLATFORM "SIMULATOR64")
   set (IOS_ARCH arm64)
   set (XCODE_IOS_PLATFORM iphonesimulator)
   set (CMAKE_SYSTEM_NAME iOS)
   set (CMAKE_OSX_SYSROOT iphoneos)
   set (CMAKE_XCODE_EFFECTIVE_PLATFORMS "-iphonesimulator")
-else (${IS_SIMULATOR})
+else (${DEVICE_IS_SIMULATOR})
 #  set (IOS_PLATFORM "SIMULATOR64")
   set (IOS_ARCH arm64)
   set (XCODE_IOS_PLATFORM iphone)

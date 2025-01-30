@@ -1,16 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
 
-set(IS_SIMULATOR True)
 include (app.cmake)     # define APP_NAME, ...
 
-message("APP BUNDLE ${APP_BUNDLE_IDENTIFIER}")
 
 set(HOME $ENV{HOME})
 
-set(PROJECT ${APP})
-
-project(${PROJECT}
-        VERSION "1.0.1"
+project(${APP_PROJECT_NAME}
+        VERSION ${APP_VERSION}
         LANGUAGES C CXX OBJC OBJCXX)
 
 include (ios.cmake)
@@ -18,13 +14,15 @@ include (ios.cmake)
 include ("${CMAKE_CURRENT_SOURCE_DIR}/app/CMakeLists.txt")
 set(PROJECT_SOURCES ${app_sources})
 
+message("App project ${APP_PROJECT_NAME}")
 message("App name ${APP_NAME}")
+message("App name ${APP_VERSION}")
+message("App bundle ${APP_BUNDLE_IDENTIFIER}")
 message("Project sources ${PROJECT_SOURCES}")
 
 set(CMAKE_SUPPRESS_REGENERATION true)
 
 set(ICONDIR ${CMAKE_CURRENT_SOURCE_DIR}/icons)
-
 file(GLOB ICON_IMAGES    "${ICONDIR}/*.png" )
 
 add_executable(${APP_NAME} MACOSX_BUNDLE)
@@ -33,8 +31,8 @@ set(APP_RESOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/resources)
 file(GLOB_RECURSE APP_RESOURCES "${APP_RESOURCE_DIR}/*" )
 
 target_sources(${APP_NAME} PRIVATE
-  ${ICON_IMAGES}
   ${PROJECT_SOURCES}
+  ${ICON_IMAGES}
   ${CMAKE_CURRENT_SOURCE_DIR}/LaunchScreen.storyboard
   ${APP_RESOURCES}
 )
@@ -72,14 +70,6 @@ target_link_libraries(${APP_NAME} ${CFNETWORK})
 target_link_libraries(${APP_NAME} ${SYSTEMCONFIGURATION})
 
 target_compile_options(${APP_NAME} PRIVATE "-Wno-deprecated")
-
-#target_sources(${APP_NAME} PRIVATE
-#    ${CMAKE_CURRENT_SOURCE_DIR}/resources
-#)
-#
-#set_source_files_properties(${assets_path} PROPERTIES
-#    MACOSX_PACKAGE_LOCATION Resources
-#)
 
 set_target_properties(${APP_NAME} PROPERTIES
                       MACOSX_BUNDLE YES

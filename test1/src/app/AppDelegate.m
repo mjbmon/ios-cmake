@@ -16,6 +16,7 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //  NSLog(@"app window %f %f %f %f",self.window.frame.x,self.window.frame.y,self.window.frame.w,self.window.frame.h);
 
+
   [self.window setRootViewController:[[ViewController alloc] init]];
   the_controller = (ViewController *) self.window.rootViewController;
   [self.window makeKeyAndVisible];

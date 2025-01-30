@@ -26,8 +26,7 @@ https://developer.apple.com/library/archive/documentation/General/Conceptual/Ext
 
   (there are DocumentProviders and Document Picker)
 
-
- */ 
+*/ 
 
 // Print string to ns log
 void cns_log(const char *s);
