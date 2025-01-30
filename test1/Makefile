@@ -3,6 +3,9 @@ include make.conf
 clean:
 	rm -rf build sim.log
 
+scrub: clean
+	rm -rf make.conf src/app.cmake
+
 gen:
 	cmake ${DEBUG} \
                 -S ./src  -B ./build -GXcode
@@ -50,3 +53,6 @@ screenshot:
 
 log:
 	tail -F "$(xcrun simctl getenv booted SIMULATOR_LOG_ROOT)/system.log"
+
+make.conf:
+	./configure
