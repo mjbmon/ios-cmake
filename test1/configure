@@ -4,6 +4,10 @@
 # Question: where should there be quotes?
 #
 
+#
+# Project settings
+#
+
 APP=test1
 APP_NAME=Test1
 APP_PROJECT_NAME=${APP}
@@ -24,8 +28,13 @@ DEVICE_OS=17.5
 DEVICE_ID=C669C32F-55A3-420B-88CB-B025675D1E0D
 DEVICE="platform=iOS Simulator,id=${DEVICE_ID}"
 
+#
+#  Generate make.conf and src/app.cmake from settings:
+#
+
 cat > make.conf <<EOF
 # This is the configuration for the Makefile
+# (generated from configure script)
 APP=${APP}
 APP_NAME=${APP_NAME}
 APP_PROJECT_NAME=${APP_PROJECT_NAME}
@@ -47,6 +56,7 @@ EOF
 
 cat > src/app.cmake <<EOF
 # This is the configuration for the CMakeFiles.txt
+# (generated from configure script)
 set(APP ${APP})
 set(APP_NAME ${APP_NAME})
 set(APP_PROJECT_NAME ${APP_PROJECT_NAME})

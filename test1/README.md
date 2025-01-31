@@ -62,7 +62,11 @@ This is a screenshot of the app running on the simulator:
 
   * Get the log file from the simulator.
 
-  * App versioning.
+  * App versioning. There is a APP_VERSION setting in the
+    configure script, which sets the variable for the
+    cmake process. Need to figure out how the code can
+    get this variable. CMake could generate a file
+    `version.h` to be placed in the source tree.
 
   * Add a screenshot.
 
